@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/defaultTemplate}">
+<head>
+    <title>Help - J.A.D.S. Gym</title>
+</head>
+<body>
+    <section layout:fragment="content">
+        <h1>Help Page</h1>
+        <p>For assistance, please contact us:</p>
+        <p>Email: <span th:text="${helpModel.email}"></span></p>
+        <p>Phone: <span th:text="${helpModel.phoneNumber}"></span></p>
+    </section>
+</body>
+</html>

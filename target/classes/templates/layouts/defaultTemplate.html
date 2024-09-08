@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>J.A.D.S Gym</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+    <link th:href="@{/styles/theme.css}" rel="stylesheet" />
+    <style type="text/css">
+        .bs-example {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Insert Header Fragment -->
+        <div class="row">
+            <div class="col-md-12" th:replace="~{layouts/common :: header}">
+                My Header
+            </div>
+        </div>
+
+        <!-- Main Body Content -->
+        <section layout:fragment="content" class="row">
+            <div class="col-md-12">
+                <p>My Body Contents</p>
+            </div>
+        </section>
+
+        <!-- Insert Footer Fragment -->
+        <div class="row">
+            <div class="col-md-12" th:replace="~{layouts/common :: footer}">
+                My Footer
+            </div>
+        </div>
+    </div>
+</body>
+</html>

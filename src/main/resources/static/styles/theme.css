@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/* This is the color theme of the program. */
+
+:root 
+{
+    --black: #000000;
+    --white: #FFFFFF;
+    --grey: #707070;
+    --blue: #007bff;
+}
+
+/* This is the font family for the gym web site. */
+body, h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link 
+{
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--black);
+}
+
+/* This is a variety of colors for the navigation bar and sections of the web site. */
+.navbar, .footer 
+{
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.navbar-expand-lg 
+{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+
+.navbar-light .navbar-nav .nav-link 
+{
+    color: var(--black);
+}
+
+.navbar-light .navbar-nav .nav-link:hover 
+{
+    color: var(--grey);
+}
+
+body 
+{
+    background-color: var(--grey);
+    color: var(--grey);
+}
+
+.footer 
+{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* This ensures there is proper width and padding in the web site. */
+.container-fluid 
+{
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    width: 100vw; 
+}
+
+/* This ensures the footer is properly sized and organized. */
+.footer 
+{
+    
+    background-color: #f8f9fa;
+    color: #4CAF50;
+    text-align: center;
+}
+

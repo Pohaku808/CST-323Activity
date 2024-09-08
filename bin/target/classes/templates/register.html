@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Register</title>
+</head>
+<body>
+	<div layout:fragment="content">
+	<!-- Mapping is done here -->
+	    <form th:action="@{/doRegister}" th:object="${registerModel}" method="post">
+	        <table>
+	        	<tr>
+	                <td>First Name:</td>
+	                <td>
+	                    <input type="text" th:field="*{firstName}" />
+	                </td>
+	                <td>
+	                    <span style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span>
+	                </td>
+	            </tr>
+	            
+	            <tr>
+	                <td>Last Name:</td>
+	                <td>
+	                    <input type="text" th:field="*{lastName}" />
+	                </td>
+	                <td>
+	                    <span style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</span>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td>Phone Number:</td>
+	                <td>
+	                    <input type="text" th:field="*{phoneNumber}" />
+	                </td>
+	                <td>
+	                    <span style="color:red" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Phone Number Error</span>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td>Email:</td>
+	                <td>
+	                    <input type="text" th:field="*{email}" />
+	                </td>
+	                <td>
+	                    <span style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td>Password:</td>
+	                <td>
+	                    <input type="password" th:field="*{password}" />
+	                </td>
+	                <td>
+	                    <span style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td colspan="3"><input type="submit" value="Submit" /></td>
+	            </tr>
+	        </table>
+	    </form>
+	</div>
+</body>
+</html>

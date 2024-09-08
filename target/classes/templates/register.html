@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/defaultTemplate}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Register</title>
+</head>
+<body>
+	<!-- Mapping is done here -->
+    <div layout:fragment="content" class="container mt-5">
+    	<h2 style="color: white; font-weight:bold; font-style:italic; text-decoration: underline">Register</h2>
+        <form th:action="@{/doRegister}" th:object="${userModel}" method="post" class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName" style="color: White; font-weight:bold;">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" th:field="*{firstName}" required>
+                    <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red;">First Name Error</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName" style="color: White; font-weight:bold;">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" th:field="*{lastName}" required>
+                    <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red;">Last Name Error</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phoneNumber" style="color: White; font-weight:bold;">Phone Number:</label>
+                    <input type="text" class="form-control" id="phoneNumber" th:field="*{phoneNumber}" required>
+                    <div th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" style="color: red;">Phone Number Error</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="username" style="color: White; font-weight:bold;">Username:</label>
+                    <input type="text" class="form-control" id="username" th:field="*{username}" required>
+                    <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red;">Email Error</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email" style="color: White; font-weight:bold;">Email:</label>
+                    <input type="email" class="form-control" id="email" th:field="*{email}" required>
+                    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;">Email Error</div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password" style="color: White; font-weight:bold;">Password:</label>
+                    <input type="password" class="form-control" id="password" th:field="*{password}" required>
+                    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;">Password Error</div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title}">J.A.D.S. Gym</title>
+</head>
+<body>
+
+<div th:fragment="header" class="container-fluid">
+    <div class="text-center mb-4">
+    	<!-- This is the page title and logo. -->
+        <img th:src="@{/images/jadsgym.jpg}" height="150px" />
+    </div>
+    <div class="bs-example">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border: 2px solid black;">
+    <button type="button" data-toggle="collapse" data-target="#navbarCollapse" class="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-between">
+        <ul class="navbar-nav mr-auto flex-grow-1">
+        	<li class="nav-item flex-grow-1 text-center">
+                <a href="/" class="nav-link" style="color: black;">Home</a>
+            </li>
+            <li class="nav-item flex-grow-1 text-center">
+                <a href="/login" class="nav-link" style="color: black;">Login</a>
+            </li>
+            <li class="nav-item flex-grow-1 text-center">
+                <a href="/aboutus" class="nav-link" style="color: black;">About Us</a>
+            </li>
+            <li class="nav-item flex-grow-1 text-center">
+                <a href="/products/display" class="nav-link" style="color: black;">Product Catalog</a>
+            </li>
+            <li class="nav-item flex-grow-1 text-center">
+                <a href="/help" class="nav-link" style="color: black;">Help</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav flex-grow-1 justify-content-end">
+            <li class="nav-item flex-grow-1 text-right">
+                <a href="/register" class="nav-link" style="color: black;">Create New Account</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+			<li>
+				<form th:action="@{/logout}" method="POST">
+					<input type="submit" value="Log Out"/>
+				</form>
+			</li>
+		</ul>
+    </div>
+</nav>
+        
+</div>
+</div>
+
+<!-- This is the common footer fragment. -->
+<div th:fragment="footer" class="container-fluid">
+    <div class="text-center text-success py-3" style="position: fixed; left: 0; bottom: 0; width: 100vw; background-color: #ffffff;">Copyright &copy; 2024 J.A.D.S. Gym</div>
+</div>
+
+</body>
+</html>

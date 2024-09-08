@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/defaultTemplate}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Login</title>
+</head>
+<body>
+	<div layout:fragment="content" class="container mt-4">
+
+		
+		<form th:action="@{/login}" method="post">
+			<h2 style="color: white; font-weight:bold; font-style:italic; text-decoration: underline">Login</h2> -->
+			<div th:if="${param.error}" style="color: red; font-weight:bold; font-style:italic; text-decoration: underline">
+			Invalid User Name or Password.
+		</div>
+			<table>
+				<tr class="form-group">
+					<td style="padding: 5px; font-weight:bold; color: white;">User Name:</td>
+					<td class="form-control" style="padding: 5px; margin:5px;"><input type="text" name="username"
+						id="uername" placeholder="Username" required /></td>
+				</tr>
+				<tr>
+					<td style="padding: 5px; font-weight:bold; color: white;">Password:</td>
+					<td class="form-control" style="padding: 5px ; margin:5px;"><input type="password"
+						name="password" id="password" placeholder="Password" required /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input class="btn btn-primary" type="submit"
+						value="Sign In" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/defaultTemplate}">
+<head>
+    <title>About Us - J.A.D.S. Gym</title>
+    <style>
+        /* Custom style */
+        .about-text-large 
+        {
+            font-size: 24px; 
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section layout:fragment="content">
+        <div class="container"> <!-- Bootstrap container for proper alignment and padding -->
+            <h1 style="color: white;">About Us</h1>
+            <!-- Text class Bootstrap for styling -->
+            <p class="about-text-large" th:text="${aboutModel.aboutText}">Default About Us text</p>
+        </div>
+    </section>
+</body>
+</html>
+

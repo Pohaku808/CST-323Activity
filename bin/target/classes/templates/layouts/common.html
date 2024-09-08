@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div th:fragment="header">
+	<div align="center">
+	<h1>Welcome to J.A.D.S. Gym!</h1>
+	</div>
+	<div class="bs-example">
+		<nav class="navbar navbar-default">
+		<!-- brand and toggle get grouped for better mobile display -->
+		<button type="button" data-target="#navbarCollaplse" data-toggle="collapse" class = "navbar-toggle">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+		<a href="#" class="navbar-brand">J.A.D.S Gym</a>
+		
+		<!-- collection of nav links and other content for toggling -->
+		<!-- used for top bar -->
+		<div id="navbarCollapse" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+			<li><a href="/aboutus" target="_blank">About Us</a></li>
+			<li><a href="/newproduct" target="_blank">Add a New Product</a></li>
+			<li><a href="https://temp" target="_blank">Product Catalog</a></li>
+			<li><a href="https://temp" target="_blank">Checkout</a></li>
+			<li><a href="/help" target="_blank">Help</a></li>
+			</ul>
+			<ul class="nav nabar-nav navbar-right">
+				<li><a href="/register" target="_blank">Create New Account</a></li>
+				
+			</ul>
+		</div>
+	</nav>
+</div>
+
+<!-- page title and log -->
+<h2 th:text="${title}">Default Message Text</h2></br>
+<img th:src="@{/images/jadsgym.jpg}" height=150px /><br/><br/>
+</div>
+
+
+<!-- common footer fragment -->
+<div th:fragment="footer">
+<h5 style="color:green; text-align: center; position: fixed; bottom: 0; width: 100%;">Copyright 2024 J.A.D.S. Gym</h5>
+</div>
+</html>

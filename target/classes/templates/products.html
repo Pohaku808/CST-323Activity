@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/defaultTemplate}">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+    <div layout:fragment="content" class="container mt-4">
+        <h2 style="color: white; font-weight:bold; font-style:italic; text-decoration: underline; text-align:center;">Products</h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="text-align:center">Order Number</th>
+                        <th scope="col" style="text-align:center">Product Name</th>
+                        <th scope="col" style="text-align:center">Price</th>
+                        <th scope="col" style="text-align:center">Quantity</th>
+                        <th scope="col" style="text-align:center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${productInv.empty}">
+                        <td style="text-align:center" colspan="4">No Orders Available</td>
+                    </tr>
+                    <tr th:each="product : ${productInv}">
+                        <td style="text-align:center"><h5 th:text="${product.orderNo}" style="color: white; font-weight:bold;"></h5></td>
+                        <td style="text-align:center"><h5 th:text="${product.productName}" style="color: white; font-weight:bold;"></h5></td>
+                        <td style="text-align:center"><h5 th:text="${product.price}" style="color: white; font-weight:bold;"></h5></td>
+                        <td style="text-align:center"><h5 th:text="${product.quantity}" style="color: white; font-weight:bold;"></h5></td>
+                        
+   
+                        <td>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <form th:action="@{'/products/delete/' + ${product.id}}" method="post">
+                        		<button type="submit">Delete</button>
+                   			</form>
+                    	<form th:action="@{'/products/update/' + ${product.id}}" method="get">
+                        		<button type="submit">Update</button>
+                   			</form>
+                        </div>
+                        </td>
+   
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a  href="/products/newproduct" class="btn btn-primary" >Add a New Product</a>
+    </div>
+</body>
+</html>
+

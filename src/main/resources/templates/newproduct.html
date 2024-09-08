@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/defaultTemplate}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Register</title>
+</head>
+<body>
+	<!-- Mapping is done here -->
+	<div layout:fragment="content" class="container mt-4">
+		<h2 style="color: white; font-weight:bold; font-style:italic; text-decoration: underline">Add A New Product</h2>
+	    <form th:action="@{/products/doProduct}" th:object="${productModel}" method="post" class="needs-validation" novalidate>
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label for="orderNo" style="color: white; font-weight:bold;">Order Number:</label>
+	                <input type="text" class="form-control" id="orderNo" th:field="*{orderNo}" required>
+	                <div th:if="${#fields.hasErrors('orderNo')}" th:errors="*{orderNo}"  style="color: red;">Order Number Error</div>
+	            </div>
+	        </div>
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label for="productName" style="color: white; font-weight:bold;">Product Name:</label>
+	                <input type="text" class="form-control" id="productName" th:field="*{productName}" required>
+	                <div th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}" style="color: red;">Product Name Error</div>
+	            </div>
+	        </div>
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label for="price" style="color: white; font-weight:bold;">Product Price:</label>
+	                <input type="text" class="form-control" id="price" th:field="*{price}" required>
+	                <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}"  style="color: red;">Product Price Error</div>
+	            </div>
+	        </div>
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label for="quantity" style="color: white; font-weight:bold;">Product Quantity:</label>
+	                <input type="text" class="form-control" id="quantity" th:field="*{quantity}" required>
+	                <div th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"  style="color: red;">Product Quantity Error</div>
+	            </div>
+	        </div>
+
+	        <button type="submit" class="btn btn-primary">Submit</button>
+	    </form>
+	</div>
+</body>
+</html>
