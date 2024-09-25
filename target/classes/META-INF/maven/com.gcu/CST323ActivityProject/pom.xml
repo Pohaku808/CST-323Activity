@@ -84,12 +84,10 @@
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 		</dependency>
-
-
-
 	</dependencies>
 
 	<build>
+		<finalName>CST323ActivityProject</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
