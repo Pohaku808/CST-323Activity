@@ -56,6 +56,8 @@ public class RegisterController {
         {
             model.addAttribute("title", "register Form");
             return "register";
+            
+            //FIXME: ADD LOG HERE
         }
         
 		// check if user registration info is valid
@@ -64,7 +66,8 @@ public class RegisterController {
 		//if the user registration info is valid
         if (check == true) 
         {
-
+            //FIXME: ADD LOG HERE
+        	
 			// Display the products page
 			return "redirect:/products";
         }

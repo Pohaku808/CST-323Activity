@@ -6,13 +6,14 @@ import java.util.Optional;
 
 import javax.sql.DataSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.jads.data.entity.ProductEntity;
 import com.jads.data.repository.ProductRepository;
-import com.jads.model.ProductModel;
 
 
 /**
@@ -28,6 +29,11 @@ public class ProductDataService implements DataAccessInterface<ProductEntity> {
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
     
+	
+	
+	
+	
+	
     /**
      * Non-Default constructor for constructor injection.
      */
@@ -49,6 +55,7 @@ public class ProductDataService implements DataAccessInterface<ProductEntity> {
             // Get all the Entity Orders
             Iterable<ProductEntity> orderIterable = productRepository.findAll();
 
+            
             // Convert to a List and return the List
             orderIterable.forEach(product::add);
         } catch (Exception e) {
